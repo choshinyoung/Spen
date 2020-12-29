@@ -21,7 +21,7 @@ Setup
 
 2. Open `Project` view in the `Project` window.
 
-3. Copy `Spen-v1.0.arr` in `app/libs` folder.
+3. Paste `Spen-v1.0.arr` in `app/libs` folder.
 
 4. Go to `Android` view again, and open `build.gradle (Module: ~.app)` in `Gradle Scripts`.
 
