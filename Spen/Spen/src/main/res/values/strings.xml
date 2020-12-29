@@ -1,0 +1,12 @@
+<resources>
+    <string name="click">Click</string>
+    <string name="double_click">Double Click</string>
+
+    <string name="swipe_left">Swipe Left</string>
+    <string name="swipe_right">Swipe Right</string>
+    <string name="swipe_up">Swipe Up</string>
+    <string name="swipe_down">Swipe Down</string>
+
+    <string name="circle_cw">Circle Clock Wise</string>
+    <string name="circle_ccw">Circle Counter-Clock Wise</string>
+</resources>

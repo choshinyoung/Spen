@@ -1,0 +1,3 @@
+include ':Spen'
+include ':app'
+rootProject.name = "Spen"
