@@ -21,7 +21,7 @@ Spen
 
 2. `Project` 창에서 `Project` 뷰를 여세요.
 
-3. `app/libs` 폴더에 [`Spen-v1.0.arr`](/releases/tag/v1.0)을 복사하세요.
+3. `app/libs` 폴더에 [`Spen-v1.0.arr`](https://github.com/choshinyoung/Spen/releases/tag/v1.0)을 복사하세요.
 
 4. 다시 `Android` 뷰로 가서, `Gradle Scripts` 안의 `build.gradle (Module: ~.app)`을 여세요.
 
