@@ -11,13 +11,31 @@ import com.samsung.android.sdk.penremote.SpenUnitManager;
 public class SpenRemoteController {
 
     private SpenUnitManager sPenManager;
-    public boolean buttonPressed = false;
+
+    private boolean buttonPressed = false;
+    public boolean getButtonPressed() {
+        return buttonPressed;
+    }
+
+    private float x;
+    public float getX() {
+        return x;
+    }
+
+    private float y;
+    public float getY() {
+        return y;
+    }
 
     private final Context context;
     private final SpenRemoteEventReceiver receiver;
 
     public static SpenRemoteController create(Context ctx, SpenRemoteEventReceiver rcv) {
         return new SpenRemoteController(ctx, rcv);
+    }
+
+    public static SpenRemoteController create(Context ctx) {
+        return new SpenRemoteController(ctx, null);
     }
 
     SpenRemoteController(Context ctx, SpenRemoteEventReceiver rcv) {
@@ -64,13 +82,22 @@ public class SpenRemoteController {
                 ButtonEvent event = new ButtonEvent(spenEvent);
 
                 buttonPressed = event.getAction() == ButtonEvent.ACTION_DOWN;
-                receiver.SpenButtonEvent(event);
+
+                if (receiver != null)
+                    receiver.SpenButtonEvent();
             }, buttonUnit);
         }
 
         SpenUnit airMotionUnit = sPenManager.getUnit(SpenUnit.TYPE_AIR_MOTION);
         if (airMotionUnit != null)
-            sPenManager.registerSpenEventListener(spenEvent ->
-                    receiver.SpenAirMotionEvent(new AirMotionEvent(spenEvent)), airMotionUnit);
+            sPenManager.registerSpenEventListener(spenEvent -> {
+                    AirMotionEvent event = new AirMotionEvent(spenEvent);
+
+                    x = event.getDeltaX();
+                    y = event.getDeltaY();
+
+                    if (receiver != null)
+                        receiver.SpenAirMotionEvent();
+            }, airMotionUnit);
     }
 }

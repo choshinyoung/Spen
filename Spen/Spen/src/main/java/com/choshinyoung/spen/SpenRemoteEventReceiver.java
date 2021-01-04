@@ -5,8 +5,8 @@ import com.samsung.android.sdk.penremote.ButtonEvent;
 
 public interface SpenRemoteEventReceiver {
 
-    default void SpenButtonEvent(ButtonEvent event) { }
+    default void SpenButtonEvent() { }
 
-    default void SpenAirMotionEvent(AirMotionEvent event) { }
+    default void SpenAirMotionEvent() { }
 
 }

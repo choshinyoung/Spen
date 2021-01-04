@@ -1,8 +1,8 @@
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.choshinyoung.spen.SpenAirActionController;
 import com.choshinyoung.spen.SpenAirActionEventReceiver;
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements SpenAirActionEven
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        spen.KeyDown(keyCode, event);
+        spen.KeyDown(keyCode, false);
 
         return super.onKeyDown(keyCode, event);
     }
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements SpenAirActionEven
     public void onCircleCcw() {
         Log.v("Spen Air Action", "Circle Ccw");
     }
-
+    
     /*
     @Override
     public void onSwipe(int direction) {
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements SpenAirActionEven
                 break;
         }
     }
-
+    
     @Override
     public void onCircle(int direction) {
         switch (direction) {

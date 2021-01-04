@@ -52,7 +52,7 @@
         id="circle_cw"
         label="@string/circle_cw"
         priority="7"
-        trigger_key="PAGE_DOWN">
+        trigger_key="PLUS">
         <preference name="gesture" value="circle_cw"/>
         <preference name="motion_only" value="true"/>
     </action>
@@ -60,7 +60,7 @@
         id="circle_ccw"
         label="@string/circle_ccw"
         priority="8"
-        trigger_key="PAGE_UP">
+        trigger_key="MINUS">
         <preference name="gesture" value="circle_ccw"/>
         <preference name="motion_only" value="true"/>
     </action>

@@ -5,8 +5,6 @@ import android.util.Log;
 
 import com.choshinyoung.spen.SpenRemoteController;
 import com.choshinyoung.spen.SpenRemoteEventReceiver;
-import com.samsung.android.sdk.penremote.AirMotionEvent;
-import com.samsung.android.sdk.penremote.ButtonEvent;
 
 public class MainActivity extends AppCompatActivity implements SpenRemoteEventReceiver {
 
@@ -35,12 +33,12 @@ public class MainActivity extends AppCompatActivity implements SpenRemoteEventRe
     }
 
     @Override
-    public void SpenButtonEvent(ButtonEvent buttonEvent) {
-        Log.v("Spen Button", Boolean.toString(spen.buttonPressed));
+    public void SpenButtonEvent() {
+        Log.v("Spen Button", Boolean.toString(spen.getButtonPressed()));
     }
 
     @Override
-    public void SpenAirMotionEvent(AirMotionEvent airMotionEvent) {
-        Log.v("Spen AirMotion", "x: " + airMotionEvent.getDeltaX() + ", y: " + airMotionEvent.getDeltaY());
+    public void SpenAirMotionEvent() {
+        Log.v("Spen AirMotion", "x: " + spen.getX() + ", y: " + spen.getY());
     }
 }
